@@ -93,7 +93,7 @@ public class Task_FetchData extends AsyncTask<String, Void, Void> {
 		private void parsedata(String content) {		
 	        try {
 	            jObj = new JSONObject(json);
-	            JSONArray jarray=jObj.getJSONArray("animals");
+	            JSONArray jarray=jObj.getJSONArray("animal");
 	            for(int i = 0; i < jarray.length(); i++){
 	                JSONObject c = jarray.getJSONObject(i);
 

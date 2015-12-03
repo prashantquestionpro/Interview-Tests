@@ -15,7 +15,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -82,7 +81,8 @@ public class Task_FetchData extends AsyncTask<String, Void, Void> {
 	            }
 	            is.close();
 	            json = sb.toString();
-	            parsedata(json);      
+	            parsedata(json);
+	            Log.v("hi", json);
 			}catch(IOException e){
 				e.printStackTrace();
 			}
@@ -93,21 +93,29 @@ public class Task_FetchData extends AsyncTask<String, Void, Void> {
 		private void parsedata(String content) {		
 	        try {
 	            jObj = new JSONObject(json);
-	            JSONArray jarray=jObj.getJSONArray("animals");
-	            for(int i = 0; i < jarray.length(); i++){
-	                JSONObject c = jarray.getJSONObject(i);
-
-	                // Storing each json item in variable
-	                String name = c.getString("name");
-	                String imgurl = c.getString("imgURL");
-	                Log.v("name", name);
-	                Log.v("url", imgurl);
-
-	            }
-	            
 	        } catch (JSONException e) {
 	            Log.e("JSON Parser", "Error parsing data " + e.toString());
 	        }
+	        
+	        
+	        /*try {
+	            contacts = json.getJSONArray();
+
+	            // looping through All Contacts
+	            for(int i = 0; i < contacts.length(); i++){
+	                JSONObject c = contacts.getJSONObject(i);
+
+	                // Storing each json item in variable
+	                String id = c.getString(TAG_ID);
+	                String name = c.getString(TAG_NAME);
+	                String email = c.getString(TAG_EMAIL);
+	                String address = c.getString(TAG_ADDRESS);
+	                String gender = c.getString(TAG_GENDER);
+
+	            }
+	        } catch (JSONException e) {
+	            e.printStackTrace();
+	        }*/
 			
 		}
 }
