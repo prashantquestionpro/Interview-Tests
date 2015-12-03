@@ -1,10 +1,12 @@
 package com.cuelogic.interviewtest;
 
-import android.widget.ImageView;
-
 public class Elements {
 	String imgname;
 	String url;
+	public Elements(String name, String imgurl) {
+		imgname=name;
+		url=imgurl;
+	}
 	public String getImgname() {
 		return imgname;
 	}

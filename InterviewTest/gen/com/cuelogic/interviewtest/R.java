@@ -992,7 +992,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f05002f;
         public static final int action_mode_bar_stub=0x7f05002e;
         public static final int action_mode_close_button=0x7f050022;
-        public static final int action_settings=0x7f050046;
+        public static final int action_settings=0x7f05004c;
         public static final int activity_chooser_view_content=0x7f050023;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1006,7 +1006,13 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050024;
         public static final int expanded_menu=0x7f05002a;
-        public static final int gallry=0x7f050045;
+        public static final int gallry1=0x7f050045;
+        public static final int gallry2=0x7f050046;
+        public static final int gallry3=0x7f050047;
+        public static final int gallry4=0x7f050048;
+        public static final int gallry5=0x7f050049;
+        public static final int gallry6=0x7f05004a;
+        public static final int gallry7=0x7f05004b;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int horizontalScrollView1=0x7f050044;
