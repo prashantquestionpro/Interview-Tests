@@ -1,0 +1,41 @@
+package com.cuelogic.interviewtest;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.os.AsyncTask;
+import android.widget.ImageView;
+
+public class Task_FetchData extends AsyncTask<Void, Void, Void>{
+
+	Dialog dialog;
+	Context context;	
+	
+	public Task_FetchData(Context context) {
+		super();
+		this.context = context;
+	}
+
+	@Override
+	protected Void doInBackground(Void... params) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected void onPreExecute() {
+		super.onPreExecute();
+		dialog=new Dialog(context);
+		dialog.show();
+		
+	}
+
+	@Override
+	protected void onPostExecute(Void result) {
+		// TODO Auto-generated method stub
+		super.onPostExecute(result);
+		dialog.dismiss();
+	}
+
+	
+
+}

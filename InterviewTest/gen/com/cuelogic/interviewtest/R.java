@@ -992,7 +992,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f05002f;
         public static final int action_mode_bar_stub=0x7f05002e;
         public static final int action_mode_close_button=0x7f050022;
-        public static final int action_settings=0x7f050042;
+        public static final int action_settings=0x7f050046;
         public static final int activity_chooser_view_content=0x7f050023;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1006,11 +1006,14 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050024;
         public static final int expanded_menu=0x7f05002a;
+        public static final int gallry=0x7f050045;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
+        public static final int horizontalScrollView1=0x7f050044;
         public static final int icon=0x7f050028;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050025;
+        public static final int imageView1=0x7f050043;
         public static final int left_icon=0x7f050031;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050027;
@@ -1023,6 +1026,7 @@ containing a value of this type.
         public static final int radio=0x7f05002d;
         public static final int right_container=0x7f050032;
         public static final int right_icon=0x7f050033;
+        public static final int scrollView1=0x7f050042;
         public static final int search_badge=0x7f050038;
         public static final int search_bar=0x7f050037;
         public static final int search_button=0x7f050039;

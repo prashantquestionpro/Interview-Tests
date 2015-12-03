@@ -1,0 +1,58 @@
+package com.cuelogic.interviewtest;
+
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.AsyncTask;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class Task_FetchData extends AsyncTask<String, Void, Void> {
+
+	private final HttpClient Client = new DefaultHttpClient();
+
+	private String Content;
+	Context con;
+
+	private String Error = null;
+
+	private ProgressDialog Dialog = new ProgressDialog(con);
+
+	//TextView uiUpdate = (TextView) findViewById(R.id.output);
+
+		public Task_FetchData(Context context) {
+			con=context;
+		}
+		protected void onPreExecute() {
+			Dialog.setMessage("Downloading source..");
+			Dialog.show();
+		}
+
+		protected Void doInBackground(String... urls) {
+			try {
+				HttpGet httpget = new HttpGet(urls[0]);
+				ResponseHandler<String> responseHandler = new BasicResponseHandler();
+				Content = Client.execute(httpget, responseHandler);
+			} catch (ClientProtocolException e) {
+				
+			} catch (IOException e) {
+				
+			}
+				return null;
+	       }
+
+		protected void onPostExecute(Void unused){
+				Dialog.dismiss();
+	            
+	    }
+         
+}

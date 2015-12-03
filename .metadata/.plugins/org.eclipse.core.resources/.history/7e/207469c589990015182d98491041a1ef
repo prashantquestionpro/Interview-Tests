@@ -1,0 +1,58 @@
+package com.cuelogic.interviewtest;
+
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.AsyncTask;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class Task_FetchData extends AsyncTask<String, Void, Void> {
+
+	private final HttpClient Client = new DefaultHttpClient();
+
+	private String Content;
+	Context con;
+
+	private String Error = null;
+
+	 ProgressDialog Dialog;
+		public Task_FetchData(Context context) {
+			con=context;
+		}
+		protected void onPreExecute() {
+			Dialog=new ProgressDialog(con);
+			Dialog.setMessage("Downloading source..");
+			Dialog.show();
+		}
+		
+		@Override
+		protected void onPostExecute(Void result) {
+			super.onPostExecute(result);
+			Dialog.dismiss();
+		}
+		
+		
+		@Override
+		protected Void doInBackground(String... url) {
+			try{
+				HttpGet httpget = new HttpGet(url[0]);
+				ResponseHandler<String> responseHandler = new BasicResponseHandler();
+				Content=Client.execute(httpget,responseHandler);
+				Log.v("hi", Content);
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+			return null;
+		}
+}
